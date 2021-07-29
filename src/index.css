@@ -1,13 +1,326 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --Analog_background_color-: #8d6bac;
+}
+#body_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#analog_digital_container {
+  width: 500px;
+  height: 500px;
+  box-shadow: 10px 10px 30px rgb(214, 214, 214), 0px 0px 20px rgb(187, 186, 186);
+  border-radius: 15px;
+  background-color: var(--Analog_background_color-);
+}
+
+/* TAB---------------------------------------------------- */
+#anala_digital_tab {
+  width: 500px;
+  position: absolute;
+}
+#analog_digital_container button {
+  height: 35px;
+  border-width: 0;
+  position: absolute;
+  color: white;
+  font-size: 25px;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  transition-duration: 30ms;
+}
+#analog_clock_tab {
+  width: 250px;
+  background-color: var(--Analog_background_color-);
+  border-radius: 15px 30px 0px 0px;
+  z-index: 1;
+  text-align: left;
+  padding-left: 30px;
+  box-shadow: 5px 5px 5px #49365c42;
+}
+#digital_clock_tab {
+  width: 280px;
+  background-color: rgb(124, 26, 124);
+  right: 0px;
+  text-align: right;
+  padding-right: 30px;
+  border-radius: 0px 15px 0px 0px;
+  box-shadow: -5px -5px 5px rgb(88, 38, 88) inset;
+}
+
+/* Analog Clock------------------------------------------------------ */
+#analog_clock_container {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  top: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#analog_clock_outer_frame {
+  width: 85%;
+  height: 90%;
+  background-image: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 35%,
+    rgb(0, 0, 0) 75%
+  );
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgb(70, 70, 70);
+}
+#analog_clock_inner_frame {
+  width: 92%;
+  height: 92%;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Analog Clock Number */
+#analog_clock_number_container {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 55%,
+    rgb(223, 222, 222) 70%
+  );
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analog_clock_number {
+  font-size: 45px;
+  position: absolute;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#one {
+  left: 64%;
+  top: 14%;
+}
+#two {
+  left: 75%;
+  top: 25%;
+}
+#three {
+  left: 80%;
+  top: 43%;
+}
+#four {
+  left: 75%;
+  top: 62%;
+}
+#five {
+  left: 63%;
+  top: 76%;
+}
+#six {
+  left: 47%;
+  top: 80%;
+}
+#seven {
+  right: 64%;
+  top: 75%;
+}
+#eight {
+  right: 75%;
+  top: 60%;
+}
+#nine {
+  right: 80%;
+  top: 44%;
+}
+#ten {
+  right: 73%;
+  top: 25%;
+}
+#eleven {
+  right: 60%;
+  top: 13%;
+}
+#twelve {
+  left: 44%;
+  top: 8%;
+}
+
+/* Analog clock dot Circle */
+
+#analog_clock_dot_point_container {
+  width: 75%;
+  height: 75%;
+  /* background-color: salmon; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analog_clock_dot_pointer_circle {
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#one_circle {
+  left: 63%;
+  top: 24%;
+}
+#two_circle {
+  left: 72%;
+  top: 33%;
+}
+#three_circle {
+  left: 77%;
+  top: 49%;
+}
+#four_circle {
+  left: 74%;
+  top: 65%;
+}
+#five_circle {
+  left: 63%;
+  top: 76%;
+}
+#six_circle {
+  left: 49%;
+  top: 80%;
+}
+#seven_circle {
+  right: 63%;
+  top: 75%;
+}
+#eight_circle {
+  right: 73%;
+  top: 64%;
+}
+#nine_circle {
+  right: 77%;
+  top: 49%;
+}
+#ten_circle {
+  right: 73%;
+  top: 34%;
+}
+#eleven_circle {
+  right: 63%;
+  top: 23%;
+}
+#twelve_circle {
+  left: 49%;
+  top: 19%;
+}
+
+/* Analog clock time pointer */
+#analog_clock_time_pointer_container {
+  width: 90%;
+  height: 90%;
+  /* background-color: purple; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#analog_clock_hour_pointer_container {
+  width: 105%;
+  height: 12px;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+}
+#analog_clock_hour_pointer_transparent {
+  width: 31%;
+  height: 100%;
+}
+#analog_clock_hour_pointer_flat {
+  width: 59%;
+  height: 100%;
+  background-color: black;
+}
+#analog_clock_hour_pointer_sharp {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 25px solid black;
+}
+#analog_clock_minute_pointer_container {
+  width: 100%;
+  height: 7px;
+  position: absolute;
+  display: flex;
+  z-index: 2;
+}
+#analog_clock_minute_pointer_transparent {
+  width: 31%;
+  height: 100%;
+}
+#analog_clock_minute_pointer_flat {
+  width: 59%;
+  height: 100%;
+  background-color: black;
+}
+#analog_clock_minute_pointer_sharp {
+  width: 0;
+  height: 0;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  border-left: 25px solid black;
+}
+#analog_clock_middle_pointer_circle {
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+#analog_clock_middle_pointer_inner_circle {
+  width: 35%;
+  height: 35%;
+  border-radius: 50%;
+  background-color: rgb(207, 31, 31);
+  z-index: 5;
+}
+#analog_clock_second_pointer_container {
+  width: 100%;
+  height: 8px;
+  position: absolute;
+  display: flex;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+}
+#analog_clock_second_pointer_transparent {
+  width: 25%;
+  height: 100%;
+}
+#analog_clock_second_pointer_thick {
+  width: 15%;
+  height: 100%;
+  background-color: rgb(207, 31, 31);
+  border-radius: 2px;
+  box-shadow: 0px 0px 5px rgb(150, 150, 150);
+}
+#analog_clock_second_pointer {
+  width: 60%;
+  height: 3px;
+  background-color: rgb(207, 31, 31);
+  box-shadow: 0px 0px 5px rgb(90, 89, 89);
 }
